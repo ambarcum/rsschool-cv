@@ -42,3 +42,11 @@ function lovefunc(flower1, flower2){
 }
 ```
 ==============
+
+### Courses:
+
+* HTML/CSS Professional layout  on the [GeekBrains](https://gb.ru/) (completed)
+* JavaScript Manual on the [GeekBrains](https://gb.ru/)(in progress)
+* [RS Schools](https://rs.school/) Course «JavaScript/Front-end. Stage 0» (in progress)
+
+============
