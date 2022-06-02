@@ -50,3 +50,12 @@ function lovefunc(flower1, flower2){
 * [RS Schools](https://rs.school/) Course «JavaScript/Front-end. Stage 0» (in progress)
 
 ============
+
+### Languages:
+
+* English - A2/B1
+* Armenian - Native
+* Russian - Native
+
+===========
+
