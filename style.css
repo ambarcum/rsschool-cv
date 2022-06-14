@@ -1,6 +1,781 @@
-.ball {
-    height: 200px;
-    width: 200px;
-    border-radius: 100px;
-    background-color: red;
+@charset "UTF-8";
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active,
+a:hover {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-family: sans-serif;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+/*--обнулние--*/
+@font-face {
+  font-family: KdamThmorPro;
+  src: url("assets/fonts/KdamThmorPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: TiroGurmukhi;
+  src: url("assets/fonts/TiroGurmukhi-Italic.ttf");
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  width: 1440px;
+  margin: 0 auto;
+}
+
+header {
+  height: 150px;
+  background-image: url(assets/img/bg.jpg);
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 150px;
+  font-family: KdamThmorPro;
+  font-size: 30px;
+  color: white;
+}
+
+.header__left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  line-height: 40px;
+}
+
+.header__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  border: 1px solid white;
+}
+
+.navigate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.navigate__logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  font-size: 30px;
+  border: 1px solid white;
+  color: white;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.navigate__logo:hover {
+  font-size: 34px;
+  color: #edb315;
+  border-color: #edb315;
+  cursor: pointer;
+}
+
+.navigate__logo:hover .navigate__items {
+  display: block;
+}
+
+.navigate__items {
+  position: absolute;
+  right: 80px;
+  padding-right: 50px;
+  display: none;
+}
+
+.navigate__link:hover {
+  color: #edb315;
+}
+
+.navigate__item {
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+.navigate__link {
+  color: white;
+  text-decoration: none;
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 50px;
+}
+
+.profile__img {
+  height: 300px;
+  margin-right: 10%;
+}
+
+.profile__info {
+  font-family: TiroGurmukhi;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.profile__info_heading {
+  padding-bottom: 30px;
+  font-family: KdamThmorPro;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.sectionHeading {
+  text-align: center;
+  margin-top: 30px;
+  font-family: KdamThmorPro;
+  font-size: 40px;
+}
+
+.skills {
+  margin-top: 30px;
+  height: 200px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 22px;
+  font-family: KdamThmorPro;
+  color: white;
+  background-image: url(assets/img/bg.jpg);
+}
+
+.skills__name {
+  padding-bottom: 20px;
+}
+
+.plusBox {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  background-color: #edb315;
+  border-radius: 2px;
+}
+
+.minusBox {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+  border: 1px solid #edb315;
+  border-radius: 2px;
+}
+
+.courses-languages_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.courses {
+  padding: 10px;
+  margin-top: 50px;
+  width: 40%;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+}
+
+.languages {
+  padding: 10px;
+  margin-top: 50px;
+  width: 40%;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+}
+
+.courses-languages {
+  color: white;
+}
+
+.courses-languages__card {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  height: 180px;
+  border: 3px solid #2f2f31;
+  border-radius: 10px;
+  background-image: url(assets/img/bg.jpg);
+}
+
+.courses-languages__card_heading {
+  padding-bottom: 20px;
+  padding-top: 20px;
+  font-size: 30px;
+  font-family: KdamThmorPro;
+}
+
+.courses-languages__card_text {
+  padding-bottom: 30px;
+  font-size: 18px;
+  font-family: KdamThmorPro;
+}
+
+.courses-languages__card_status {
+  padding: 5px;
+  font-size: 20px;
+  font-family: KdamThmorPro;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 4px 2px #edb315;
+          box-shadow: 0px 0px 4px 2px #edb315;
+}
+
+.courses-languages__card_link {
+  color: white;
+  text-decoration: underline;
+}
+
+.courses-languages__card_link:hover {
+  color: #edb315;
+}
+
+.my-projects {
+  height: 200px;
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(assets/img/bg.jpg);
+}
+
+.my-projects:hover .my-projects__item_svg {
+  -webkit-animation-name: none;
+          animation-name: none;
+}
+
+.my-projects__item {
+  height: 130px;
+  width: 200px;
+  position: relative;
+  text-align: center;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+}
+
+.my-projects__item:hover {
+  border-color: white;
+}
+
+.my-projects__item:hover .my-projects__item_txt {
+  color: #edb315;
+}
+
+.my-projects__item:hover .my-projects__item_path {
+  fill: white;
+}
+
+.my-projects__item_txt {
+  padding-top: 11px;
+  color: white;
+  font-family: KdamThmorPro;
+  font-size: 25px;
+}
+
+.my-projects__item_svg {
+  position: absolute;
+  top: 45px;
+  left: 60px;
+  width: 70px;
+  height: 70px;
+  -webkit-animation-name: project_anim;
+          animation-name: project_anim;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-animation-timing-function: ease-in;
+          animation-timing-function: ease-in;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+}
+
+.my-projects__item_path {
+  fill: #edb315;
+}
+
+@-webkit-keyframes project_anim {
+  0% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  1% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  2% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  3% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  4% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  5% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  6% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  7% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  8% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  9% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  10% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+@keyframes project_anim {
+  0% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  1% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  2% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  3% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  4% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  5% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  6% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  7% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  8% {
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px);
+  }
+  9% {
+    -webkit-transform: translateX(10px);
+            transform: translateX(10px);
+  }
+  10% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+.example {
+  margin-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  font-size: 18px;
+  font-family: TiroGurmukhi;
+  line-height: 24px;
+}
+
+.example__text {
+  width: 45%;
+  padding: 60px 30px 0 30px;
+  color: white;
+  background-image: url(assets/img/bg.jpg);
+  border-radius: 10px;
+}
+
+.example__code {
+  width: 45%;
+  height: 252px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+}
+
+.love-check {
+  height: 200px;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 20px;
+  position: relative;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+  background-image: url(assets/img/bg.jpg);
+}
+
+.love-check__form {
+  position: absolute;
+  top: 41px;
+  left: 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.love-check_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.love-check__input {
+  width: 70%;
+  display: inline;
+  padding-left: 10px;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+}
+
+.love-check__label {
+  padding-bottom: 10px;
+  font-family: KdamThmorPro;
+  font-size: 18px;
+  color: white;
+}
+
+.love-check__button {
+  width: 100px;
+  height: 100px;
+  margin-top: 9px;
+  margin-left: 82px;
+  font-family: KdamThmorPro;
+  font-size: 30px;
+  background: none;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+  color: white;
+}
+
+.love-check__button:hover {
+  border-color: white;
+  color: #edb315;
+}
+
+.heart {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 50px;
+  right: 100px;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+}
+
+.broken-heart_svg {
+  width: 70px;
+  height: 70px;
+  display: none;
+}
+
+.heart_svg {
+  width: 70px;
+  height: 70px;
+  display: none;
+}
+
+.heart_path {
+  fill: red;
+}
+
+footer {
+  height: 200px;
+  margin-top: 40px;
+  background-image: url(assets/img/bg.jpg);
+}
+
+.contacts {
+  height: 150px;
+}
+
+.contacts__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.contacts__item {
+  width: 30%;
+  height: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.contacts__item_link {
+  padding: 15px 30px 15px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: 3px solid #edb315;
+  border-radius: 10px;
+}
+
+.contacts__item_link:hover {
+  border-color: white;
+}
+
+.contacts__item_link:hover .contacts__item_text {
+  color: #edb315;
+}
+
+.contacts__item_link:hover .contacts__item_path {
+  fill: #edb315;
+}
+
+.contacts__item_text {
+  padding-top: 15px;
+  padding-left: 20px;
+  font-family: KdamThmorPro;
+  font-size: 25px;
+  color: white;
+}
+
+.contacts__item_svg {
+  height: 60px;
+  width: 60px;
+}
+
+.contacts__item_path {
+  fill: white;
+}
+
+.footer-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.footer-info_svg {
+  width: 100px;
+  height: 40px;
+  margin-right: 100px;
+  fill: #edb315;
+}
+
+.footer-info_svg:hover {
+  fill: white;
+}
+
+.footer-info_year {
+  margin-left: 100px;
+  font-family: KdamThmorPro;
+  font-size: 20px;
+  color: #edb315;
+}
+/*# sourceMappingURL=style.css.map */
